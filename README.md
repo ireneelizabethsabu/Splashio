@@ -1,19 +1,86 @@
 ![BFH Banner](https://trello-attachments.s3.amazonaws.com/542e9c6316504d5797afbfb9/542e9c6316504d5797afbfc1/39dee8d993841943b5723510ce663233/Frame_19.png)
-# Project Name
-Long Description about project. This project do that. This project is awesome...
+# SPLASHIO
+## Summary
+
+A slack bot to remind user about drinking water. 
+
+## Elements
+
+- User profiles to setup reminder and update
+- Slack bot to send reminder and take feedback
+- Sign in with slack
+
+
+## Possible users journey
+
+- User able to login to a website using slack login
+- Setup reminder frequency (every hour, every 30 min, every 2 hours, every 3 hours) and start and ending time of the day (eg: work time usually - 9am to 8PM)
+- See daily status of water consumed each day.
+- Users get slack notification as message as reminder with following action buttons
+    - 1 glass
+    - 2 glass
+    - 3 glass
+    - 0 glass
+    - Snooze for 10 minutes
 ## Team members
-1. Name [Embed personal github URL]
-2. Name [Embed perosnal github URL]
+1. [Elsa Maria Joseph](https://github.com/Lza-etc)
+2. [Aishwarya A J](https://github.com/aish2002)
 ## Team Id
-Team id here
+###   `BFH/recFwI5dmSSc22vib/2021`
 ## Link to product walkthrough
 [link to video]
 ## How it Works ?
 1. Explaining the working of project
 2. Embed video of project demo
 ## Libraries used
-Library Name - Version
+    @popperjs/core: "^2.9.2"
+    @slack/web-api: "^6.2.3"
+    bootstrap: "^5.0.1"
+    dotenv: "^9.0.2"
+    express: "^4.17.1"
+    localStorage: "^1.0.4"
+    moment: "^2.29.1"
+    mongodb: "^3.6.7"
+    mongoose: "^5.12.10"
+    nodemon: "^2.0.7"
+    slackbots: "^1.2.0"
+    socket.io: "^4.1.2"
 ## How to configure
-Instructions for setting up project
+### Node
+- #### Node installation on Windows
+
+  Just go on [official Node.js website](https://nodejs.org/) and download the installer.
+Also, be sure to have `git` available in your PATH, `npm` might need it (You can find git [here](https://git-scm.com/)).
+
+- #### Node installation on Ubuntu
+
+  You can install nodejs and npm easily with apt install, just run the following commands.
+
+      $ sudo apt install nodejs
+      $ sudo apt install npm
+
+- #### Other Operating Systems
+  You can find more information about the installation on the [official Node.js website](https://nodejs.org/) and the [official NPM website](https://npmjs.org/).
+
+If the installation was successful, you should be able to run the following command.
+
+    $ node --version
+    $ npm --version
+   
+
+
+
+## Install
+
+    $ git clone https://github.com/ireneelizabethsabu/Splashio.git
+    $ cd Splashio
+    $ npm install
+
+
 ## How to Run
-Instructions for running
+### `npm start`
+Runs the app in the development mode.\
+Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
