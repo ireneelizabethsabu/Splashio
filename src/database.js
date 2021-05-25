@@ -59,14 +59,6 @@ const addUserToDatabase = (body, res) => {
     })();
 };
 
-function resetzero(){
-    Reminder.update({}, {$set: {Amount : 0}}, {multi: true, new: true},function(err,doc){
-        if(err){
-            console.log(err);
-        }
-    });  
-}
-
 const  reset = () => {
   if(moment().format('h:mm') === '12:30'){
     Reminder.update({}, {$set: {Amount : 0}}, {multi: true, new: true},function(err,doc){
