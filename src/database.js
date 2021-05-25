@@ -1,4 +1,3 @@
-const localStorage = require("localStorage");
 var { User } = require("./Schema");
 var { Reminder } = require("./Schema");
 var mongoose = require("mongoose");
@@ -44,7 +43,6 @@ const addUserToDatabase = (body, res) => {
             });
             res.redirect('/dashboard');
         } else if (body.authed_user.token_type === "user") {
-            localStorage.setItem("userId", body.authed_user.id);
             const userauth = new User({
                 userId: body.authed_user.id,
                 teamId: body.team.id,
@@ -60,7 +58,7 @@ const addUserToDatabase = (body, res) => {
 };
 
 const  reset = () => {
-  if(moment().format('h:mm') === '12:30'){
+  if(moment().utcOffset("+05:30").format("HH:mm") === '00:00'){
     Reminder.update({}, {$set: {Amount : 0}}, {multi: true, new: true},function(err,doc){
         if(err){
             console.log(err);
@@ -72,10 +70,9 @@ const  reset = () => {
 }
 
 
-const reminderData = (reqBody) => {
-    console.log('reqBody.present');
+const reminderData = (reqBody,user) => {
     Reminder.findOneAndUpdate(
-        { userId: localStorage.getItem('userId') },
+          {userId: user},
         {
             $set: {
                 startTime: reqBody.startime,
@@ -89,7 +86,7 @@ const reminderData = (reqBody) => {
         if (!docs) {
             (async () => {
                 const reminder = new Reminder({
-                    userId:  reqBody.userId,
+                    userId: user,
                     startTime: reqBody.startime,
                     endTime: reqBody.lastime,
                     frequency: reqBody.frequency.split("every ")[1],
@@ -104,8 +101,8 @@ const reminderData = (reqBody) => {
     });
 }
 
-function findInUser() {
-    const docs = User.findOne( { userId: localStorage.getItem('userId') } );
+function findInUser(userid) {
+    const docs = User.findOne( { userId: userid } );
     return docs.exec();
 }
 
