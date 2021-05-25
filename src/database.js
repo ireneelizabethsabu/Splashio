@@ -54,7 +54,7 @@ const addUserToDatabase = (body, res) => {
             } catch (err) {
                 console.log("Already exists");
             }
-            res.redirect('/')
+            res.redirect('/dashboard')
         }
     })();
 };
