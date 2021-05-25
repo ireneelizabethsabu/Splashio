@@ -74,21 +74,3 @@ const slackClient = new WebClient(slackToken);
   }
 
   module.exports = {publishMessage, sendResponse}
-
-  // function sendMessageToSlackResponseURL(responseURL, JSONmessage) {
-//   var postOptions = {
-//     uri: responseURL,
-//     method: "POST",
-//     headers: {
-//       "Content-type": "application/json",
-//     },
-//     json: JSONmessage,
-//   };
-//   request(postOptions, (error, response, body) => {
-//     if (error) {
-//       console.log(error);
-//     } else {
-//       console.log("you are soooper");
-//     }
-//   });
-// }
