@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Splashio Bot</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <base href="/">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="App.css">
+</head>
+
+<body>
+  <header class="header mb-auto" id="header">
+    <nav class="navbar sticky-top navbar-expand-md navbar-light ">
+      <a class="navbar-brand" href="#">SPLASHIO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#features-section">Features</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mb-0">
+          <li class="nav-item" id="sign-in-with-slack">
+            <a type="button" class="btn btn-outline-light btn-sign-in" 
+              href="https://slack.com/oauth/v2/authorize?user_scope=identity.basic&client_id=2069591717299.2066872026167">
+                Sign in with Slack
+              </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main >
+    <span class="row">
+    <div id="intro-para" class="col-lg-4 col-12">
+      <h1 class="title">Stay hydrated with <br /><span id="splashio">SPLASHIO</span></h1>
+      <p class="lead">
+        Drink water reminder for slack
+      </p>
+      <p class="lead">
+        <a href="https://slack.com/oauth/v2/authorize?scope=incoming-webhook,commands,chat:write,im:write&client_id=2069591717299.2066872026167"
+          type="button" class="btn  btn-outline-dark btn-add-to-stack">
+          <svg enable-background="new 0 0 10 10" viewBox="0 0 2447.6 2452.5" xmlns="http://www.w3.org/2000/svg">
+            <g clip-rule="evenodd" fill-rule="evenodd">
+              <path
+                d="m897.4 0c-135.3.1-244.8 109.9-244.7 245.2-.1 135.3 109.5 245.1 244.8 245.2h244.8v-245.1c.1-135.3-109.5-245.1-244.9-245.3.1 0 .1 0 0 0m0 654h-652.6c-135.3.1-244.9 109.9-244.8 245.2-.2 135.3 109.4 245.1 244.7 245.3h652.7c135.3-.1 244.9-109.9 244.8-245.2.1-135.4-109.5-245.2-244.8-245.3z"
+                fill="#36c5f0" />
+              <path
+                d="m2447.6 899.2c.1-135.3-109.5-245.1-244.8-245.2-135.3.1-244.9 109.9-244.8 245.2v245.3h244.8c135.3-.1 244.9-109.9 244.8-245.3zm-652.7 0v-654c.1-135.2-109.4-245-244.7-245.2-135.3.1-244.9 109.9-244.8 245.2v654c-.2 135.3 109.4 245.1 244.7 245.3 135.3-.1 244.9-109.9 244.8-245.3z"
+                fill="#2eb67d" />
+              <path
+                d="m1550.1 2452.5c135.3-.1 244.9-109.9 244.8-245.2.1-135.3-109.5-245.1-244.8-245.2h-244.8v245.2c-.1 135.2 109.5 245 244.8 245.2zm0-654.1h652.7c135.3-.1 244.9-109.9 244.8-245.2.2-135.3-109.4-245.1-244.7-245.3h-652.7c-135.3.1-244.9 109.9-244.8 245.2-.1 135.4 109.4 245.2 244.7 245.3z"
+                fill="#ecb22e" />
+              <path
+                d="m0 1553.2c-.1 135.3 109.5 245.1 244.8 245.2 135.3-.1 244.9-109.9 244.8-245.2v-245.2h-244.8c-135.3.1-244.9 109.9-244.8 245.2zm652.7 0v654c-.2 135.3 109.4 245.1 244.7 245.3 135.3-.1 244.9-109.9 244.8-245.2v-653.9c.2-135.3-109.4-245.1-244.7-245.3-135.4 0-244.9 109.8-244.8 245.1 0 0 0 .1 0 0"
+                fill="#e01e5a" />
+            </g>
+          </svg>
+          Add to Slack</a></span>
+      </p>
+    </div>
+    <div class="col-lg-8 "><img src="https://i.postimg.cc/8sQx3PYm/6320.jpg" id="homepage">
+    </div>
+  </span>
+  </main>
+  <section id="features-section" >
+    <h1 id="features" class="text-center">Features</h1>
+    <div class="row px-4 justify-content-around">
+      <div class="card notify col-12 col-sm-12 col-md-6 ">
+        <div class="info">
+          <h1>Notify Me</h1>
+          <p>Spare a few seconds to set your reminder and get notified at your workspace</p>
+        </div>
+      </div>
+      <div class="card dailystat col-12 col-lg-6 col-md-6 ">
+        <div class="info">
+          <h1>Daily Status</h1>
+          <p>Know how well you are hydrated at the end of the day</p> 
+        </div>
+      </div>
+      <div class="card weekly col-12 col-lg-6 col-md-6 ">  
+        <div class="info">
+          <h1>Weekly Review</h1>
+          <p>Coming Soon...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="text-center ready-to-start">
+    <div class="readyHeader">
+      <h1>Ready to Start Using <br />Splashio?</h1>
+    </div>
+    <div class="descripara">
+      <p>Add Splashio to your Slack Workspace today and stay hydrated by setting reminders for drinking water</p>
+    </div>
+    <span>
+      <a href="https://slack.com/oauth/v2/authorize?scope=incoming-webhook,commands,chat:write&client_id=2069591717299.2066872026167"
+        type="button" class="btn  btn-outline-dark btn-add-to-stack">
+        <svg enable-background="new 0 0 10 10" viewBox="0 0 2447.6 2452.5" xmlns="http://www.w3.org/2000/svg">
+          <g clip-rule="evenodd" fill-rule="evenodd">
+            <path
+              d="m897.4 0c-135.3.1-244.8 109.9-244.7 245.2-.1 135.3 109.5 245.1 244.8 245.2h244.8v-245.1c.1-135.3-109.5-245.1-244.9-245.3.1 0 .1 0 0 0m0 654h-652.6c-135.3.1-244.9 109.9-244.8 245.2-.2 135.3 109.4 245.1 244.7 245.3h652.7c135.3-.1 244.9-109.9 244.8-245.2.1-135.4-109.5-245.2-244.8-245.3z"
+              fill="#36c5f0" />
+            <path
+              d="m2447.6 899.2c.1-135.3-109.5-245.1-244.8-245.2-135.3.1-244.9 109.9-244.8 245.2v245.3h244.8c135.3-.1 244.9-109.9 244.8-245.3zm-652.7 0v-654c.1-135.2-109.4-245-244.7-245.2-135.3.1-244.9 109.9-244.8 245.2v654c-.2 135.3 109.4 245.1 244.7 245.3 135.3-.1 244.9-109.9 244.8-245.3z"
+              fill="#2eb67d" />
+            <path
+              d="m1550.1 2452.5c135.3-.1 244.9-109.9 244.8-245.2.1-135.3-109.5-245.1-244.8-245.2h-244.8v245.2c-.1 135.2 109.5 245 244.8 245.2zm0-654.1h652.7c135.3-.1 244.9-109.9 244.8-245.2.2-135.3-109.4-245.1-244.7-245.3h-652.7c-135.3.1-244.9 109.9-244.8 245.2-.1 135.4 109.4 245.2 244.7 245.3z"
+              fill="#ecb22e" />
+            <path
+              d="m0 1553.2c-.1 135.3 109.5 245.1 244.8 245.2 135.3-.1 244.9-109.9 244.8-245.2v-245.2h-244.8c-135.3.1-244.9 109.9-244.8 245.2zm652.7 0v654c-.2 135.3 109.4 245.1 244.7 245.3 135.3-.1 244.9-109.9 244.8-245.2v-653.9c.2-135.3-109.4-245.1-244.7-245.3-135.4 0-244.9 109.8-244.8 245.1 0 0 0 .1 0 0"
+              fill="#e01e5a" />
+          </g>
+        </svg>
+        Add to Slack</a></span>
+  </section>
+  <footer class="footer">
+    <div class="row bottom_border">
+      <div class="col-6 text-center">
+        <h4 class="splashio-div">SPLASHIO.</h4>
+      </div>
+      <div class="col-6 ">
+        <div class="row text-center justify-content-center">
+          <h5 class="headin5_amrc col_white_amrc pt2">QUICK LINKS</h5>
+          <ul class="footer_ul_amrc list-group">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#features-section">Features</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <p class="text-center">Copyright @2021 | Designed With <i class="fas fa-heart"></i> by </p>
+      <ul class="social_footer_ul list-group">
+        <li><a href="#"><i class="fab fa-google"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="#"><i class="fab fa-github"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io()
+    socket.on('connect', function () {
+      console.log('Connected to Server')
+    });
+    socket.on('btnchange', function(message){
+      const bbg = document.getElementById('sign-in-with-slack');
+      bbg.innerHTML = `<a type="button" class="btn btn-outline-light btn-sign-in" 
+              href="/dashboard">
+                Dashboard
+              </a> `;
+      console.log(bbg.innerHTML);
+    });
+  </script>
+</body>
+
+</html>
