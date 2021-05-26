@@ -19,16 +19,6 @@ app.use(session({
   saveUninitialized: true
 }));
 
-function checkSignIn(req, res){
-   if(req.session.user){
-      next();     //If session exists, proceed to page
-   } else {
-      //var err = new Error("Not logged in!");
-      console.log('please sign to go to dashboard');
-      //next(err);  //Error, trying to access unauthorized page!
-   }
-}
-
 const server = app.listen(PORT, () => {
   console.log("App listening on port " + PORT);
 }); 
@@ -52,11 +42,16 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + "/front-end/index.html");
 });
 
-app.get("/dashboard",checkSignIn, (req, res) => {
-  res.sendFile(__dirname + "/front-end/dashboard.html");
+app.get("/dashboard", (req, res) => {
+  if(req.session.user){
+     res.sendFile(__dirname + "/front-end/dashboard.html");
+   } else {
+      console.log('please sign to go to dashboard');
+   }  
 });
 
 app.get("/oauth", function (req, res) {
+  
   if (!req.query.code) {
     res.status(500);
     res.send({ Error: "Looks like we're not getting code." });
@@ -72,6 +67,7 @@ app.get("/oauth", function (req, res) {
         method: "GET", //Specify the method
       },
       function (error, response, body) {
+        
         if (error) {
           console.log(error);
           res.redirect("/");
@@ -81,7 +77,7 @@ app.get("/oauth", function (req, res) {
           db.addUserToDatabase(body,res);
         }
       } 
-    ); 
+    );
   }
 });   
 
@@ -92,18 +88,19 @@ app.post("/setreminder", urlencodedParser, (req, res) => {
   var l=req.body.lastime+":00";
   var start=moment(s,"HH:mm");
   var end = moment(l,"HH:mm");
-  var duration = moment.duration(end.diff(start));
   db.findInUser(req.session.user).then((docs) => {
     var interval = parseInt(JSON.stringify(req.body).split(" ")[1]);
-    interval = (interval === 30 ) ? interval*60000 : interval* 3600000;
+    interval = (interval === 2 ) ? interval*60000 : interval* 3600000;
     function timingFn () {
       var t = moment().utcOffset("+05:30").format("HH:mm");
       var time=moment(t,"HH:mm");
       if (time.isBetween(start,end)){
         botFn.publishMessage(docs.channelId,docs.userId);
-        console.log('msg incoming');
+        console.log('msg incoming'+ docs.channelId);
         setTimeout(timingFn,interval);
       }else{
+        var currenttime = moment().format("HH:mm");
+        var duration = moment.duration(currenttime.diff(start));
         console.log('its sleep time');
         setTimeout(timingFn,duration._milliseconds );
       }
@@ -145,3 +142,5 @@ app.post("/interactive", urlencodedParser, (req, res) => {
       res.status(200).end();
   }
 });
+
+
