@@ -94,7 +94,7 @@ const reminderData = (reqBody,user) => {
                 try {
                     await reminder.save();
                 } catch (err) {
-                    console.log("is okiiiee");
+                    console.log("Invalid user");
                 }
             })();
         }
@@ -119,7 +119,7 @@ function updateDailyStatus(noofglasses, userId) {
         );
         return docs.exec();
     }catch(e){
-        console.log("no no");
+        console.log("user does not exist in database");
     }
 }
 
